@@ -1,7 +1,16 @@
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
 import Page from "@/features/Page";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
+const darkTheme = createTheme({
+    palette: {
+        mode: 'light',
+        primary: {
+            main: '#050000',
+        },
+    },
+});
 
 export default function Home() {
   return (
@@ -12,9 +21,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <Page/>
-      </Layout>
+        <ThemeProvider theme={darkTheme}>
+            <Layout>
+                <Page/>
+            </Layout>
+        </ThemeProvider>
+
     </>
   );
 }

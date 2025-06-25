@@ -18,10 +18,11 @@ const actions = [
 
 const SpeedDial = () => {
     return (
-        <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>
+        <Box sx={{ height: 80, transform: 'translateZ(0px)', flexGrow: 1 }}>
             <MuiSpeedDial
                 ariaLabel="SpeedDial basic example"
-                sx={{ position: 'absolute', bottom: 106, right: 16 }}
+                direction={"left"}
+                sx={{ position: 'fixed', bottom: 16, right: 16 }}
                 icon={<SpeedDialIcon />}
             >
                 {actions.map((action) => (

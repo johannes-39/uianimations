@@ -5,8 +5,11 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import Animation from "@/features/Animation/Animation";
+import ShitAnimation from "@/features/ShitAnimation/ShitAnimation";
+import NoAnimation from "@/features/NoAnimation/NoAnimation";
 
-const Tabs = ({...props}) => {
+const Page = () => {
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -18,16 +21,16 @@ const Tabs = ({...props}) => {
             <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChange} aria-label="lab API tabs example" variant={"fullWidth"}>
-                        <Tab label="Home" value="1" />
-                        <Tab label="Shop" value="2" />
-                        <Tab label="About" value="3" />
+                        <Tab label="GUT" value="1" />
+                        <Tab label="SCHLECHT" value="2" />
+                        <Tab label="Keine Animation" value="3" />
                     </TabList>
                 </Box>
-                <TabPanel value="1">{props.children}</TabPanel>
-                <TabPanel value="2">{props.children}</TabPanel>
-                <TabPanel value="3">{props.children}</TabPanel>
+                <TabPanel value="1"><Animation/></TabPanel>
+                <TabPanel value="2"><ShitAnimation/></TabPanel>
+                <TabPanel value="3"><NoAnimation/></TabPanel>
             </TabContext>
         </Box>
     );
 }
-export default Tabs
+export default Page

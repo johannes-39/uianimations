@@ -5,6 +5,7 @@ import {Box, Divider, Typography} from "@mui/material";
 type ObjectHeaderProps = {
     label?: string;
     children?: ReactNode;
+    bodyText?: string;
 }
 const ObjectHeader = ({...props} : ObjectHeaderProps) => {
     return (
@@ -14,7 +15,7 @@ const ObjectHeader = ({...props} : ObjectHeaderProps) => {
             <Box sx={{display: "flex", justifyContent: 'center'}}>
                 {props.children}
             </Box>
-
+            <Typography variant={'body2'} sx={{marginTop: 1, textAlign: "center"}}>{props.bodyText?.toUpperCase()}</Typography>
         </Box>
     )
 }

@@ -1,4 +1,4 @@
-import {FwpfProp, MassgabenProp, SwsProp} from "@/features/Fwpfs/types";
+import {AbsolviertProp, FwpfProp, MassgabenProp, SwsProp} from "@/features/Fwpfs/types";
 
 export const fwpfs: FwpfProp[] = [
     {
@@ -237,6 +237,16 @@ export const massgaben: MassgabenProp = {
 export const swsConfig: SwsProp = {
     sws: 'Bitte geben Sie an, wie viele Semesterwochenstunden Sie im nächsten Semester belegen möchten. Bitte achten Sie darauf, Summen anzugeben, die durch Fächerkombinationen erreichbar sind. Nur so ist es möglich, Ihnen eine möglichst optimale Fächerbelegung ermöglichen zu können.',
     info: 'Die Semesterwochenstunden von Wahlfächern bleiben an dieser Stelle unberücksichtigt. Darum rechnen Sie diese bitte nicht mit ein!',
-    belegt: 1,
-    min: 3,
+    min: 12,
 }
+
+export const absolviert: AbsolviertProp[] = [{
+    fwpfId: 5,
+    semester: "SS 24/25",
+    note: '1,7'
+},{
+    fwpfId: 7,
+    semester: "SS 24/25",
+    note: '2,0'
+}
+]

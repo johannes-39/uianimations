@@ -5,6 +5,7 @@ import {fwpfs} from "@/features/Fwpfs/content";
 import Modulbeschreibung from "@/components/Modulbeschreibung/Modulbeschreibung";
 import Filter from "@/components/Filter/Filter";
 import {FwpfProp} from "@/features/Fwpfs/types";
+import Box from "@mui/material/Box";
 
 
 const Fwpfs = () => {
@@ -31,10 +32,9 @@ const Fwpfs = () => {
 
 
     return (
-        <Stack spacing={1} alignItems="flex-start" sx={{transition: "0.5s linear"}}>
-            <ObjectHeader>
-                <Filter searchValue={searchValue} setSearchValue={setSearchValue}></Filter>
-            </ObjectHeader>
+        <Stack spacing={1} sx={{transition: "0.5s linear"}}>
+            <Filter searchValue={searchValue} setSearchValue={setSearchValue}></Filter>
+
             {list.map((value, index) => {
                     const isFaded = searchValue !== "alle" && value.fachbereich !== searchValue;
                     return (

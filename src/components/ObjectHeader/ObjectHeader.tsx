@@ -2,6 +2,7 @@ import React, {Dispatch, ReactNode, SetStateAction} from 'react'
 import {Box, Grid, SxProps, Typography} from "@mui/material";
 import Loading from "@/components/Loading/Loading";
 import Priority from "@/components/Priority/Priority";
+import {AbsolviertProp} from "@/features/Fwpfs/types";
 
 
 type ObjectHeaderProps = {
@@ -15,7 +16,7 @@ type ObjectHeaderProps = {
     sx?: SxProps;
     type?: string;
     moveItem?: (index: number, direction: "up" | "down") => void;
-}
+} & Partial<AbsolviertProp>;
 
 
 const ObjectHeader = ({...props}: ObjectHeaderProps) => {
@@ -42,6 +43,18 @@ const ObjectHeader = ({...props}: ObjectHeaderProps) => {
                 {props.type === "list" && props.moveItem ? <Grid size={3}>
                     <Priority index={props.index || 0} moveItem={props.moveItem}/>
                 </Grid>: null}
+                {props.semester &&
+                    <Grid size={12} onClick={handleClick}>
+                        <Typography>{props.semester}</Typography>
+                    </Grid>
+
+                }
+                {props.note&&
+                    <Grid size={12} onClick={handleClick}>
+                        <Typography>Note: {props.note}</Typography>
+                    </Grid>
+
+                }
             </Grid>
             <Box sx={{display: "flex", justifyContent: 'center'}}>
                 {props.children}

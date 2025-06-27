@@ -22,6 +22,11 @@ export type MassgabenProp = {
 export type SwsProp = {
     sws: string;
     info: string;
-    belegt: number;
     min: number;
+}
+
+export type AbsolviertProp = {
+    fwpfId: number;
+    semester: string;
+    note: string;
 }

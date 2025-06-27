@@ -9,9 +9,7 @@ const Summary = () => {
 
     return (
         <Stack spacing={1} alignItems="flex-start" sx={{transition: "0.5s linear"}}>
-            <ObjectHeader>
                 Hier sehen sie ihre Belegung und die Akutelle Auslastung
-            </ObjectHeader>
             {fwpfs.map((value, index) => {
                     return (
                         <ObjectHeader sx={{

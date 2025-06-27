@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
+import {useTypewriter} from "@/hooks/useTypewriter";
 // import {useTypewriter} from "@/hooks/useTypewriter";
 
 type ModulbeschreiblungProps = {
@@ -15,7 +16,7 @@ const Modulbeschreibung = ({expanded, prof, zusammenfassung, vorkenntnisse}: Mod
 
     const text = `Prof: ${prof}\n-\n${zusammenfassung}\n- \nVorkenntnisse: ${vorkenntnisse}`;
     // Texte per Typewriter animieren, nur wenn expanded=true
-    //const typedText = useTypewriter(text, 3, expanded);
+    const typedText = useTypewriter(text, 6, expanded);
     return (
         <Box sx={{width: "100%"}}>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -26,7 +27,7 @@ const Modulbeschreibung = ({expanded, prof, zusammenfassung, vorkenntnisse}: Mod
                         whiteSpace: 'pre-wrap',
                         textAlign: 'left',
                         lineHeight: 1.6
-                    }}>{text}</Typography>
+                    }}>{typedText}</Typography>
                 </Box>
 
             </Collapse>

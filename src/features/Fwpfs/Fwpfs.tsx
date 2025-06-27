@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
 import ObjectHeader from "@/components/ObjectHeader/ObjectHeader";
 import {Stack} from "@mui/material";
-import {fwpfs} from "@/features/Fwpfs/content";
+import {absolviert, fwpfs} from "@/features/Fwpfs/content";
 import Modulbeschreibung from "@/components/Modulbeschreibung/Modulbeschreibung";
 import Filter from "@/components/Filter/Filter";
 import {FwpfProp} from "@/features/Fwpfs/types";
-import Box from "@mui/material/Box";
 
 
 const Fwpfs = () => {
@@ -37,15 +36,21 @@ const Fwpfs = () => {
 
             {list.map((value, index) => {
                     const isFaded = searchValue !== "alle" && value.fachbereich !== searchValue;
-                    return (
-                        <ObjectHeader sx={{
-                            bgcolor: index < 5 ? `rgba(0, 180, 0, ${(10 - index * 2) / 20})` : index > 14 ? `rgba(255, 100, 100, ${(10 - (index - 19) * -2) / 20})` : '#ffffff',
-                            opacity: isFaded ? "0.08" : '1'  // Grün mit dynamischer Transparenz
-                        }} key={value.label} label={value.label} index={index}
-                                      expandedIndex={expandedIndex} setExpandedIndex={setExpandedIndex} type={"list"}
-                                      moveItem={moveItem}>
-                            <Modulbeschreibung expanded={index === expandedIndex} {...value}/>
-                        </ObjectHeader>)
+                    const absolviertEintrag = absolviert.find(a => a.fwpfId === value.id);
+                    if (!absolviertEintrag) {
+                        return (
+                            <ObjectHeader sx={{
+                                bgcolor: index < 5 ? `rgba(0, 180, 0, ${(10 - index * 2) / 20})` : index > 14 ? `rgba(255, 100, 100, ${(10 - (index - 19) * -2) / 20})` : '#ffffff',
+                                opacity: isFaded ? "0.08" : '1'  // Grün mit dynamischer Transparenz
+                            }} key={value.label} label={value.label} index={index}
+                                          expandedIndex={expandedIndex} setExpandedIndex={setExpandedIndex} type={"list"}
+                                          moveItem={moveItem}>
+                                <Modulbeschreibung expanded={index === expandedIndex} {...value}/>
+                            </ObjectHeader>)
+                    } else {
+                        return null
+                    }
+
                 }
             )}
 

@@ -1,9 +1,9 @@
 import React from 'react'
-import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
+import LinearProgress, {linearProgressClasses} from '@mui/material/LinearProgress';
 import Box from "@mui/material/Box";
-import { styled } from '@mui/material/styles';
+import {styled} from '@mui/material/styles';
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+const BorderLinearProgress = styled(LinearProgress)(({theme}) => ({
     height: 6,
     [`&.${linearProgressClasses.colorPrimary}`]: {
         backgroundColor: "#ffffff",
@@ -24,7 +24,7 @@ type LoadingProps = {
 }
 const Loading = ({...props}: LoadingProps) => {
     return (
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{width: '100%'}}>
             <BorderLinearProgress variant={"determinate"} {...props}/>
         </Box>
     )

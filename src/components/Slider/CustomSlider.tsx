@@ -30,10 +30,16 @@ function valuetext(value: number) {
 type CustomSliderProps = {
     belegt: number;
 }
-const CustomSlider = ({...props} : SwsProp & CustomSliderProps) => {
-    console.log(props.belegt)
+const CustomSlider = ({...props}: SwsProp & CustomSliderProps) => {
+    const [value, setValue] = React.useState<number>(props.belegt * 4);
+
+    const handleChange = (event: Event, newValue: number) => {
+        if (newValue >= props.belegt * 4) {
+            setValue(newValue);
+        }
+    };
     return (
-        <Box sx={{ width: "100%", paddingX: 4 }}>
+        <Box sx={{width: "100%", paddingX: 4}}>
             <Slider
                 aria-label="Temperature"
                 defaultValue={props.belegt * 4}
@@ -43,6 +49,8 @@ const CustomSlider = ({...props} : SwsProp & CustomSliderProps) => {
                 marks={marks}
                 min={0}
                 max={props.min}
+                value={value}
+                onChange={handleChange}
             />
         </Box>
     )

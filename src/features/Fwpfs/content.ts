@@ -224,7 +224,6 @@ export const fwpfs: FwpfProp[] = [
 ];
 
 
-
 export const massgaben: MassgabenProp = {
     studiengang: "Bachelor Wirtschaftsinformatik, Studienordnung ab 2009/10",
     voraussetzung: "Studierende dieses Studiengangs können fachwissenschaftliche Wahlpflichtfächer (FWPF) nur ableisten, wenn Sie alle Fächer des 1. Studienabschnitts bestanden haben. Die FWPF verteilen sich auf die Semester 6 und 7.",
@@ -244,9 +243,5 @@ export const absolviert: AbsolviertProp[] = [{
     fwpfId: 5,
     semester: "SS 24/25",
     note: '1,7'
-},{
-    fwpfId: 7,
-    semester: "SS 24/25",
-    note: '2,0'
 }
 ]

@@ -2,9 +2,9 @@ import React, {useState} from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from "@/components/Button/Button";
-import { ToastContainer, toast } from 'react-toastify';
+import {toast, ToastContainer} from 'react-toastify';
 
-const Exposefield = () => {
+const BewerbungsFeld = () => {
 
     const [expanded, setExpanded] = useState(true);
     const [value, setValue] = useState("")
@@ -23,13 +23,20 @@ const Exposefield = () => {
         });
     }
     return (
-        <Box sx={{width: '100%', marginTop: 2, bgcolor: "white", p:1,boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', borderRadius: 1}}>
-            { expanded ? <Box sx={{width: '100%' }}>
+        <Box sx={{
+            width: '100%',
+            marginTop: 2,
+            bgcolor: "white",
+            p: 1,
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+            borderRadius: 1
+        }}>
+            {expanded ? <Box sx={{width: '100%'}}>
                 <TextField
                     fullWidth
                     value={value}
                     id="filled-multiline-static"
-                    label="Expose"
+                    label="Bewerbung verfassen"
                     multiline
                     rows={4}
                     variant="standard"
@@ -48,4 +55,4 @@ const Exposefield = () => {
 
     )
 }
-export default Exposefield
+export default BewerbungsFeld

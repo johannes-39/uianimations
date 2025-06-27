@@ -21,11 +21,11 @@ const ShitAnimation = () => {
                         },
                         transition: 'all 0.2s ease-in-out',
                         '@keyframes wobble': {
-                            '0%': { transform: 'rotate(1deg) translateX(0px)' },
-                            '25%': { transform: 'rotate(2deg) translateX(2px)' },
-                            '50%': { transform: 'rotate(-2deg) translateX(-2px)' },
-                            '75%': { transform: 'rotate(3deg) translateX(1px)' },
-                            '100%': { transform: 'rotate(1deg) translateX(0px)' },
+                            '0%': {transform: 'rotate(1deg) translateX(0px)'},
+                            '25%': {transform: 'rotate(2deg) translateX(2px)'},
+                            '50%': {transform: 'rotate(-2deg) translateX(-2px)'},
+                            '75%': {transform: 'rotate(3deg) translateX(1px)'},
+                            '100%': {transform: 'rotate(1deg) translateX(0px)'},
                         },
                     }}
                 >Test Button</CustomButton>

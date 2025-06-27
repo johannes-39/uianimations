@@ -52,8 +52,8 @@ function BpRadio(props: RadioProps) {
         <Radio
             disableRipple
             color="default"
-            checkedIcon={<BpCheckedIcon />}
-            icon={<BpIcon />}
+            checkedIcon={<BpCheckedIcon/>}
+            icon={<BpIcon/>}
             {...props}
         />
     );

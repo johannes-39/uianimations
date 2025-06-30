@@ -12,6 +12,15 @@ import {toast, ToastContainer} from "react-toastify";
 import Footer from '@/components/Footer/Footer';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import {styled} from "@mui/material/styles";
+import Success from "@/features/Success/Success";
+
+const StyledTab = styled(Tab)({
+    "&.Mui-selected": {
+        color: "#000000",
+    }
+});
+
 
 const Page = () => {
     const [value, setValue] = React.useState(1);
@@ -21,11 +30,15 @@ const Page = () => {
         setValue(newValue);
     };
 
+    const handleClickReset = () => {
+        setValue(1);
+    }
     const handleClick = () => {
         setValue(value < 3 ? value + 1 : 3)
         window.scrollTo({top: 0, behavior: 'smooth'});
         if (value === 3) {
             setSended(true);
+            setValue(4)
             toast.success('Erfolgreich abgesendet', {
                 position: "top-center",
                 autoClose: 1000,
@@ -51,14 +64,16 @@ const Page = () => {
         <Box sx={{width: '100%', typography: 'body1', maxWidth: "700px",}}>
             <TabContext value={value}>
                 <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example" variant={"fullWidth"}>
+                    <TabList onChange={handleChange} aria-label="lab API tabs example" variant={"fullWidth"}
+                             sx={{marginTop: -1, height: "60px"}}>
                         {/*<Tab label="Fwpfs" value="1"/>*/}
-                        <Tab icon={value > 1 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>}
-                             iconPosition="end" label="Start" value={1}/>
+                        <StyledTab icon={value > 1 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>}
+                                   iconPosition="end" label="Start" value={1} sx={{color: value > 1 ? "green" : null}}/>
                         <Tab icon={value > 2 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>} iconPosition="end"
-                             label="Fächerwahl" value={2}/>
-                        <Tab icon={sended && value === 3 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>} iconPosition="end"
-                             label="Überblick" value={3}/>
+                             label="Fächerwahl" value={2} sx={{color: value > 2 ? "green" : null}}/>
+                        <StyledTab icon={sended && value > 3 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>}
+                                   iconPosition="end"
+                                   label="Überblick" value={3} sx={{color: sended && value > 3 ? "green" : null}}/>
                     </TabList>
                 </Box>
                 {/*<TabPanel value="1"><Start/></TabPanel>*/}
@@ -66,8 +81,9 @@ const Page = () => {
                                                                     setSelectedValue={setSelectedValue}/></TabPanel>
                 <TabPanel sx={{marginBottom: 5}} value={2}><Fwpfs/></TabPanel>
                 <TabPanel sx={{marginBottom: 5}} value={3}><Summary/></TabPanel>
-            </TabContext>
-            <Footer prevClick={handleClickPrev} nextClick={handleClick} activeStep={value}></Footer>
+                <TabPanel sx={{marginBottom: 5}} value={4}><Success onClick={handleClickReset}/></TabPanel>
+            </TabContext>{value < 4 &&
+            <Footer prevClick={handleClickPrev} nextClick={handleClick} activeStep={value}></Footer>}
             <ToastContainer/>
 
         </Box>

@@ -65,7 +65,7 @@ const Filter = ({...props}: FilterProps) => {
         props.setSearchValue((event.target as HTMLInputElement).value);
     };
     return (
-        <FormControl fullWidth>
+        <FormControl>
             <RadioGroup
                 row
                 aria-labelledby="demo-radio-buttons-group-label"

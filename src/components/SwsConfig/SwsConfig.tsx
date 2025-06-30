@@ -5,17 +5,18 @@ import CustomSlider from "@/components/Slider/CustomSlider";
 import ObjectHeader from "@/components/ObjectHeader/ObjectHeader";
 import Modulbeschreibung from "@/components/Modulbeschreibung/Modulbeschreibung";
 import theme from "@/styles/theme";
+import {ConfigProps} from "@/features/Config/Config";
 
 
 export type MyMenuItems = {
     value: number;
 }
 
-type SwsConfigProps = SwsProp & {
+type SwsConfigProps = { defaultValue: number } & SwsProp & {
     fwpf: FwpfProp[];
 } & Partial<AbsolviertProp>;
 
-const SwsConfig = ({fwpf, ...props}: SwsConfigProps & { fwpf: (FwpfProp & AbsolviertProp)[] }) => {
+const SwsConfig = ({fwpf, ...props}: SwsConfigProps & ConfigProps & { fwpf: (FwpfProp & AbsolviertProp)[] }) => {
 
 
     const [expandedIndex, setExpandedIndex] = useState(-1)
@@ -29,8 +30,8 @@ const SwsConfig = ({fwpf, ...props}: SwsConfigProps & { fwpf: (FwpfProp & Absolv
             {/*<Typography variant="body1" paragraph>*/}
             {/*    {props.info}*/}
             {/*</Typography>*/}
-            <CustomSlider {...props} belegt={fwpf.length}/>
-            <Typography variant="body1" color={theme.palette.primary.main} paragraph>
+            <CustomSlider {...props} defaultValue={props.defaultValue}/>
+            <Typography variant="body1" color={theme.palette.primary.main} sx={{marginTop: 3}} paragraph>
                 Bereits belegt:
             </Typography>
             {/*<Grid container sx={{alignItems: "center",}}>*/}

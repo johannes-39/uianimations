@@ -37,7 +37,8 @@ const ObjectHeader = ({...props}: ObjectHeaderProps) => {
             {props.value &&
                 <Loading value={props.value}/>}<Box sx={{p: 1.5}}>
             <Grid container>
-                <Grid size={9} onClick={handleClick}>
+                <Grid size={9} onClick={handleClick}
+                      sx={{display: "flex", justifyContent: "space-between", alignItems: 'center'}}>
                     <Box sx={{display: "flex", justifyContent: "space-between", alignItems: 'center'}}>
                         <Typography variant={'body1'}>{props.label?.toUpperCase()}</Typography>
                     </Box>

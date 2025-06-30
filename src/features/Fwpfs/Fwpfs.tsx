@@ -5,8 +5,11 @@ import {absolviert, fwpfs} from "@/features/Fwpfs/content";
 import Modulbeschreibung from "@/components/Modulbeschreibung/Modulbeschreibung";
 import Filter from "@/components/Filter/Filter";
 import {FwpfProp} from "@/features/Fwpfs/types";
+import Box from "@mui/material/Box";
 
-
+export type FwpfsProp = {
+    selectedValue?: number;
+}
 const Fwpfs = () => {
 
     const [expandedIndex, setExpandedIndex] = useState(0);
@@ -32,7 +35,11 @@ const Fwpfs = () => {
 
     return (
         <Stack spacing={1} sx={{transition: "0.5s linear"}}>
-            <Filter searchValue={searchValue} setSearchValue={setSearchValue}></Filter>
+            <Box sx={{display: "flex", justifyContent: "center"}}>
+                <Filter searchValue={searchValue} setSearchValue={setSearchValue}></Filter>
+            </Box>
+
+            {/*<SwsProgress selected={list.slice(0,2)} {...props}/>*/}
 
             {list.map((value, index) => {
                     const isFaded = searchValue !== "alle" && value.fachbereich !== searchValue;

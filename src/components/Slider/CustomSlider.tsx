@@ -2,6 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import {SwsProp} from "@/features/Fwpfs/types";
+import {ConfigProps} from "@/features/Config/Config";
 
 
 const marks = [
@@ -28,28 +29,29 @@ function valuetext(value: number) {
 }
 
 type CustomSliderProps = {
-    belegt: number;
-}
+    min: number;
+    defaultValue: number;
+} & ConfigProps;
 const CustomSlider = ({...props}: SwsProp & CustomSliderProps) => {
-    const [value, setValue] = React.useState<number>(props.belegt * 4);
+    //const [value, setValue] = React.useState<number>(props.belegt * 4);
 
     const handleChange = (event: Event, newValue: number) => {
-        if (newValue >= props.belegt * 4) {
-            setValue(newValue);
+        if (newValue >= props.defaultValue) {
+            props.setSelectedValue(newValue - props.defaultValue);
         }
     };
     return (
         <Box sx={{width: "100%", paddingX: 4}}>
             <Slider
                 aria-label="Temperature"
-                defaultValue={props.belegt * 4}
+                defaultValue={props.selectedValue + props.defaultValue}
                 getAriaValueText={valuetext}
                 valueLabelDisplay="auto"
                 step={2}
                 marks={marks}
                 min={0}
                 max={props.min}
-                value={value}
+                value={props.selectedValue + props.defaultValue}
                 onChange={handleChange}
             />
         </Box>

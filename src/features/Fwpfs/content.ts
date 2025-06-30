@@ -10,29 +10,29 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "keine",
         zusammenfassung: "Grundlagen der Gestaltung von Benutzeroberflächen mit Fokus auf visuelle Kommunikation und Interaktionsprinzipien.",
         auslastung: 85,
-        fachbereich: "win",
+        fachbereich: "win"
     },
     {
         id: 2,
         label: "Interaktive Systeme",
-        sws: 3,
+        sws: 2,
         prof: "Dr. Lena Hoffmann",
         pruefung: "Projektarbeit",
         vorkenntnisse: "Grundlagen der Programmierung",
         zusammenfassung: "Konzepte und Methoden interaktiver Benutzungssysteme. Ziel ist die Entwicklung eigener Prototypen.",
         auslastung: 90,
-        fachbereich: "in",
+        fachbereich: "in"
     },
     {
         id: 3,
         label: "Webtechnologien",
-        sws: 5,
+        sws: 4,
         prof: "Prof. Jens Schröder",
         pruefung: "schriftliche Klausur",
         vorkenntnisse: "HTML, CSS, JavaScript",
         zusammenfassung: "Moderne Webentwicklung mit aktuellen Technologien, Frameworks und responsivem Design.",
         auslastung: 95,
-        fachbereich: "min",
+        fachbereich: "min"
     },
     {
         id: 4,
@@ -43,7 +43,7 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "Mensch-Computer-Interaktion",
         zusammenfassung: "Methoden zur Bewertung und Verbesserung der Gebrauchstauglichkeit interaktiver Systeme.",
         auslastung: 70,
-        fachbereich: "win",
+        fachbereich: "win"
     },
     {
         id: 5,
@@ -54,18 +54,18 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "OOP, Java oder Swift",
         zusammenfassung: "Konzeption und Entwicklung mobiler Applikationen für Android und iOS mit Fokus auf User Experience.",
         auslastung: 88,
-        fachbereich: "in",
+        fachbereich: "in"
     },
     {
         id: 6,
         label: "Data Visualisierung",
-        sws: 3,
+        sws: 2,
         prof: "Dr. Julia Richter",
         pruefung: "Projekt + Bericht",
         vorkenntnisse: "Grundlagen Statistik",
         zusammenfassung: "Techniken und Werkzeuge zur visuellen Darstellung komplexer Daten und Zusammenhänge.",
         auslastung: 76,
-        fachbereich: "win",
+        fachbereich: "win"
     },
     {
         id: 7,
@@ -76,18 +76,18 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "keine",
         zusammenfassung: "Einführung in die Grundlagen der Spieleentwicklung mit Fokus auf Interaktionsdesign und Spielerführung.",
         auslastung: 80,
-        fachbereich: "min",
+        fachbereich: "min"
     },
     {
         id: 8,
         label: "3D-Modellierung",
-        sws: 3,
+        sws: 2,
         prof: "Katharina Meier",
         pruefung: "praktische Abgabe",
         vorkenntnisse: "Grundkenntnisse Grafikdesign",
         zusammenfassung: "Erstellung und Texturierung einfacher 3D-Modelle für Anwendungen in UI/UX und Gaming.",
         auslastung: 65,
-        fachbereich: "min",
+        fachbereich: "min"
     },
     {
         id: 9,
@@ -98,18 +98,18 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "Usability Engineering",
         zusammenfassung: "Gestaltung sprachgesteuerter Interfaces mit Fokus auf Dialogführung und semantische Interaktion.",
         auslastung: 58,
-        fachbereich: "win",
+        fachbereich: "win"
     },
     {
         id: 10,
         label: "User Research",
-        sws: 3,
+        sws: 2,
         prof: "Dr. Miriam Krauß",
         pruefung: "Bericht + Reflexion",
         vorkenntnisse: "MCI, Statistik",
         zusammenfassung: "Qualitative und quantitative Methoden zur Nutzerforschung zur Gestaltung besserer Interfaces.",
         auslastung: 73,
-        fachbereich: "win",
+        fachbereich: "win"
     },
     {
         id: 11,
@@ -120,7 +120,7 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "Grundlagen HCI",
         zusammenfassung: "Entwicklung inklusiver digitaler Anwendungen für Menschen mit Einschränkungen.",
         auslastung: 62,
-        fachbereich: "min",
+        fachbereich: "min"
     },
     {
         id: 12,
@@ -131,18 +131,18 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "Grundkenntnisse Design",
         zusammenfassung: "Einführung in die Gestaltung von Mikrointeraktionen und animierten UI-Elementen.",
         auslastung: 82,
-        fachbereich: "min",
+        fachbereich: "min"
     },
     {
         id: 13,
         label: "AR/VR Interfaces",
-        sws: 5,
+        sws: 4,
         prof: "Dr. Nora Lüders",
         pruefung: "Projekt",
         vorkenntnisse: "3D-Modellierung, Unity empfohlen",
         zusammenfassung: "Entwicklung von Benutzeroberflächen für immersive Augmented- und Virtual-Reality-Umgebungen.",
         auslastung: 91,
-        fachbereich: "min",
+        fachbereich: "min"
     },
     {
         id: 14,
@@ -153,18 +153,18 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "MCI",
         zusammenfassung: "Berücksichtigung kultureller Unterschiede bei der Gestaltung von UI/UX für internationale Zielgruppen.",
         auslastung: 47,
-        fachbereich: "win",
+        fachbereich: "win"
     },
     {
         id: 15,
         label: "UI Prototyping",
-        sws: 3,
+        sws: 2,
         prof: "Hannah Weigel",
         pruefung: "Prototyp + Review",
         vorkenntnisse: "Grundlagen HCI",
         zusammenfassung: "Schnelles Erstellen und Testen von User Interfaces mit Hilfe von Prototyping-Tools.",
         auslastung: 77,
-        fachbereich: "win",
+        fachbereich: "win"
     },
     {
         id: 16,
@@ -175,18 +175,18 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "Grundlagen Psychologie",
         zusammenfassung: "Wahrnehmung, Entscheidungsverhalten und Kognition im Zusammenhang mit Interface-Gestaltung.",
         auslastung: 66,
-        fachbereich: "win",
+        fachbereich: "win"
     },
     {
         id: 17,
         label: "Designsysteme & Komponenten",
-        sws: 3,
+        sws: 2,
         prof: "Michael Harz",
         pruefung: "Komponentenprojekt",
         vorkenntnisse: "CSS, JS",
         zusammenfassung: "Aufbau und Pflege konsistenter Designsysteme zur skalierbaren UI-Entwicklung.",
         auslastung: 84,
-        fachbereich: "in",
+        fachbereich: "in"
     },
     {
         id: 18,
@@ -197,7 +197,7 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "HTML/CSS",
         zusammenfassung: "Gestaltung von Interfaces, die sich flexibel an verschiedene Bildschirmgrößen und Geräte anpassen.",
         auslastung: 60,
-        fachbereich: "min",
+        fachbereich: "min"
     },
     {
         id: 19,
@@ -208,18 +208,18 @@ export const fwpfs: FwpfProp[] = [
         vorkenntnisse: "Animation & UX-Grundlagen",
         zusammenfassung: "Design subtiler Animationen und Reaktionen im Interface für eine verbesserte Nutzererfahrung.",
         auslastung: 79,
-        fachbereich: "min",
+        fachbereich: "min"
     },
     {
         id: 20,
         label: "Interface Testing",
-        sws: 3,
+        sws: 2,
         prof: "Lisa Bergmann",
         pruefung: "Testdokumentation",
         vorkenntnisse: "Prototyping & UX",
         zusammenfassung: "Planung, Durchführung und Auswertung von Usability-Tests mit echten Nutzergruppen.",
         auslastung: 68,
-        fachbereich: "win",
+        fachbereich: "win"
     }
 ];
 
@@ -240,7 +240,7 @@ export const swsConfig: SwsProp = {
 }
 
 export const absolviert: AbsolviertProp[] = [{
-    fwpfId: 5,
+    fwpfId: 7,
     semester: "SS 24/25",
     note: '1,7'
 }

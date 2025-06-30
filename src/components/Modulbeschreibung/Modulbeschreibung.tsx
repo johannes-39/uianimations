@@ -18,7 +18,7 @@ const Modulbeschreibung = ({expanded, prof, zusammenfassung, vorkenntnisse}: Mod
     // Texte per Typewriter animieren, nur wenn expanded=true
     const typedText = useTypewriter(text, 6, expanded);
     return (
-        <Box sx={{width: "100%"}}>
+        <Box sx={{width: "100%", transition: "0.5s linear"}}>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <Divider sx={{marginY: 1}}/>
                 <Box sx={{p: 1}}>

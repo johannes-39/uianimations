@@ -14,6 +14,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import {styled} from "@mui/material/styles";
 import Success from "@/features/Success/Success";
+import LoginPage from "@/features/LoginPage/LoginPage";
 
 const StyledTab = styled(Tab)({
     "&.Mui-selected": {
@@ -24,7 +25,8 @@ const StyledTab = styled(Tab)({
 
 const Page = () => {
     const [value, setValue] = React.useState(1);
-    const [sended, setSended] = useState(false)
+    const [sended, setSended] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -61,30 +63,33 @@ const Page = () => {
     const [selectedValue, setSelectedValue] = React.useState<number>(0);
 
     return (
-        <Box sx={{width: '100%', typography: 'body1', maxWidth: "700px",}}>
-            <TabContext value={value}>
-                <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example" variant={"fullWidth"}
-                             sx={{marginTop: -1, height: "60px"}}>
-                        {/*<Tab label="Fwpfs" value="1"/>*/}
-                        <StyledTab icon={value > 1 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>}
-                                   iconPosition="end" label="Start" value={1} sx={{color: value > 1 ? "green" : null}}/>
-                        <Tab icon={value > 2 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>} iconPosition="end"
-                             label="Fächerwahl" value={2} sx={{color: value > 2 ? "green" : null}}/>
-                        <StyledTab icon={sended && value > 3 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>}
-                                   iconPosition="end"
-                                   label="Überblick" value={3} sx={{color: sended && value > 3 ? "green" : null}}/>
-                    </TabList>
-                </Box>
-                {/*<TabPanel value="1"><Start/></TabPanel>*/}
-                <TabPanel sx={{marginBottom: 10}} value={1}><Config selectedValue={selectedValue}
-                                                                    setSelectedValue={setSelectedValue}/></TabPanel>
-                <TabPanel sx={{marginBottom: 5}} value={2}><Fwpfs/></TabPanel>
-                <TabPanel sx={{marginBottom: 5}} value={3}><Summary/></TabPanel>
-                <TabPanel sx={{marginBottom: 5}} value={4}><Success onClick={handleClickReset}/></TabPanel>
-            </TabContext>{value < 4 &&
-            <Footer prevClick={handleClickPrev} nextClick={handleClick} activeStep={value}></Footer>}
-            <ToastContainer/>
+        <Box sx={{width: '100%', typography: 'body1', maxWidth: "700px"}}>
+            {
+                loggedIn ? <div><TabContext value={value}>
+                    <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
+                        <TabList onChange={handleChange} aria-label="lab API tabs example" variant={"fullWidth"}
+                                 sx={{marginTop: -1, height: "60px"}}>
+                            {/*<Tab label="Fwpfs" value="1"/>*/}
+                            <StyledTab icon={value > 1 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>}
+                                       iconPosition="end" label="Start" value={1} sx={{color: value > 1 ? "green" : null}}/>
+                            <Tab icon={value > 2 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>} iconPosition="end"
+                                 label="Fächerwahl" value={2} sx={{color: value > 2 ? "green" : null}}/>
+                            <StyledTab icon={sended && value > 3 ? <CheckCircleIcon/> : <RadioButtonUncheckedIcon/>}
+                                       iconPosition="end"
+                                       label="Überblick" value={3} sx={{color: sended && value > 3 ? "green" : null}}/>
+                        </TabList>
+                    </Box>
+                    {/*<TabPanel value="1"><Start/></TabPanel>*/}
+                    <TabPanel sx={{marginBottom: 10}} value={1}><Config selectedValue={selectedValue}
+                                                                        setSelectedValue={setSelectedValue}/></TabPanel>
+                    <TabPanel sx={{marginBottom: 5}} value={2}><Fwpfs/></TabPanel>
+                    <TabPanel sx={{marginBottom: 5}} value={3}><Summary/></TabPanel>
+                </TabContext>
+                    { value === 4 &&<Success onClick={handleClickReset}/>}
+                    <Footer prevClick={handleClickPrev} nextClick={handleClick} activeStep={value}></Footer>
+                <ToastContainer/></div> : <LoginPage setLoggedIn={setLoggedIn}/>
+            }
+
 
         </Box>
     );

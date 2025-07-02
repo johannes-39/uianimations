@@ -4,7 +4,11 @@ import Box from "@mui/material/Box";
 import {green} from '@mui/material/colors';
 import Fab from '@mui/material/Fab';
 import CheckIcon from '@mui/icons-material/Check';
-import {Stack} from "@mui/material";
+import {Stack, Typography} from "@mui/material";
+import {fwpfs} from "@/features/Fwpfs/content";
+import ObjectHeader from "@/components/ObjectHeader/ObjectHeader";
+import BewerbungsFeld from "@/components/BewerbungsFeld/BewerbungsFeld";
+import theme from "@/styles/theme";
 
 type SuccessProps = {
     onClick: () => void;
@@ -41,7 +45,10 @@ const Success = ({...props}: SuccessProps) => {
         }
     };
     return (
-        <Stack spacing={5} sx={{marginTop: 10, display: "flex", justifyContent: "center"}}>
+        <Stack spacing={1} sx={{marginTop: 1, display: "flex", justifyContent: "center", textAlign: "center"}}>
+            <Typography variant="body1" color={theme.palette.primary.main} paragraph>
+                Erfolgreich abgesendet
+            </Typography>
             <Box sx={{display: "flex", justifyContent: "center", position: "relative"}}>
                 <Fab
                     aria-label="save"
@@ -52,6 +59,14 @@ const Success = ({...props}: SuccessProps) => {
                     <CheckIcon/>
                 </Fab>
             </Box>
+            {fwpfs.slice(0,2).map((value, index) => {
+                    return (
+                        <ObjectHeader sx={{
+                            bgcolor: index < 5 ? `rgba(0, 180, 0, ${(10 - index * 2) / 20})` : index > 14 ? `rgba(255, 100, 100, ${(10 - (index - 19) * -2) / 20})` : '#ffffff'
+                        }} key={value.label} label={value.label} value={value.auslastung} index={index}>
+                        </ObjectHeader>)
+                }
+            )}
             <Button onClick={props.onClick}> Wahl überarbeiten</Button>
         </Stack>
 
